@@ -1,0 +1,104 @@
+http status codes:
+search for them
+200 - succes
+301 - moved permanently
+403 - forbidden
+500 - internal server error (related with framework maybe - bug)
+
+
+django-admin startproject <project_name>
+
+django-admin startapp <app_name>
+
+go to settings and configure new app [write name of it to the applications]
+
+go to views of the app and write new def with httpresponse
+
+after creating some httpresponse go to own url file of the hello app and connect it with main app
+
+need to create templates folder and <app_name> folder in order to create the html files and render them
+<app_name> folder inside the folder is obligatory by framework, logic works in this way! that s why there should be 
+Hello > templates > Hello > .html files[inside]
+
+{{VAR}} - is for the using variables that come from views
+
+
+URLS - directing pages
+VIEWS - what template should be rendered
+TEMPLATES - what info should be passed
+
+{% function %}
+{% endfunction %} 
+#can use it for if statement and loops
+
+
+TEMPLATE INHERITENCE
+create one html and extends that block for others
+
+left on 1:02:00
+
+
+
+FORMs
+
+in order not to have frauds and check tokens of users django has cfrs_token middleware built_in
+
+and also you can use django built in form from django import forms and you can do validation, check client side input and also check server side input 
+
+
+SESSIONS
+in order to not to have global variable which everyone can see with same link
+you can have session which will keep different data for each session (different tasks for each session)
+no such table: django_session - need to create table
+
+in this step we need to run migrate - in order to migrate all tables to the db and let site work with it
+
+
+
+
+DAY 4
+SQL, MODELS, MIGRATIONS
+
+SQlite - datatypes
+text
+numeric
+integer 
+real (float, date or smth other num type of data)
+blob (audio, image or smth)
+
+MySQL
+char(size) -zipcodes or smth
+varchar(size)
+smallint
+int 
+bigint 
+float
+double
+
+
+COMMANDS
+COMMAND (create table)
+create table table_name (
+    column_name data_type PK/SK/Null autoincrement,
+    column_name data_type PK/SK/Null,
+)
+
+constraints
+check (in specf range - sql checks)
+default 
+not Null
+primary key
+unique
+
+COMMAND (insert)
+add new row , new data 
+
+insert into table_name
+(column1, column2, column3)
+values ('data', 'data', data)
+
+
+COMMAND (select)
+select * from table_name 
+
+

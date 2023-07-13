@@ -1,0 +1,47 @@
+$color: red;
+
+ul {
+    font-size: 14px;
+    color: $color;
+}
+
+
+
+ol {
+    font-size: 16;
+    color: $color
+}
+
+
+
+div {
+    font-size: 18;
+
+    p{
+        color: blue
+    }
+
+    ul {
+        color: green
+    }
+}
+
+
+// inheritence in sass
+
+%message {
+    font-family: sans-serif;
+    font-size: 18px';
+    font-weight:bold;
+}
+
+
+.warning {
+    @extend %message;
+    background-color: red;
+}
+
+
+
+
+

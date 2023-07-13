@@ -1,0 +1,33 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to do list</title>
+</head>
+<body> -->
+
+{% extends "tasks/layout.html"%}
+
+{%block body%}
+    <h1> Add Task</h1>
+    <form action = "{% url  'tasks:add' %}" method = "post">
+
+        <!-- it gives error w/o code below (django check user token and make sure that there is token which is not fraud [another site does not use user info and
+        submit form with automated with that site]) -->
+
+        {% csrf_token %}
+        <!-- <input type = "text" name = "task"> -->
+            <!-- take form from django forms in views file -->
+        {{ form }}
+
+
+        <input type="submit">
+    </form>
+
+    <a href = "{% url 'tasks:index'%}" >View Tasks</a>
+{%endblock%}
+
+
+<!-- </body>
+</html> -->

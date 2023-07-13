@@ -1,0 +1,58 @@
+git clone <url> - to get(download) clone of the repository to the local
+git add file.[extension] - add file to the repository
+git commit -m "message" - changes with the message on code
+git status - tells currently what is happenin in the repository on local
+git push - changes pushed to the github
+git commit -am "add heading" - add all modified files
+
+git pull - take all changes from repository to the local and see latest version
+
+git log - see history with commit, message date and user
+
+git reset - will take current version and will change it to the older one
+
+git reset --hard <commit> - reset everything to the previous version [ <commit> - commith hash (some numbers!)]
+
+git reset --hard origin/master - will reset the origin 
+
+
+
+MERGE CONFILCTS
+
+<<<< 
+b = 2               [your changes]
+=======
+b=0                 [remote changes]
+>>>>>>
+
+
+LEFT ON MERGE CONFILCT - 29:15
+
+
+
+BRANCHING
+
+when new feature comes, we can add another branch/path and continue on it
+master - default/main one
+"feature" - another branch which we will combine it with main when it ll be done
+
+
+
+git branch - shows which branch you are in (*main , there can be others too)
+
+git checkout -b <branch_name> - new branch to create named as style and start to push there
+
+git checkout <name> - switch between branches
+
+git merge <branch_name> - merging branch with the master
+
+
+
+
+
+
+#CREATING HTML , JS page site with Github
+
+#1. create new repository with username.github.io
+
+

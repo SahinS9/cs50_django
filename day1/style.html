@@ -1,0 +1,48 @@
+<!-- style and text align or etc. can be included to the body and everything in the body will be like that, 
+    or seperately for each of them it ll be like that! -->
+
+<!-- rel is the relationship of this file, link is the stylesheet -->
+
+
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <title>Welcome to my Web Page!</title>
+    <!-- <style>
+        h1 { color: blue;
+            text-align: center;}
+    </style> -->
+
+<!-- for styling only one header, we use ID for that in the tag  <style> #ID<style> --> 
+<!-- we can use 2 IDs for the having same style, but writing each ID is not good, 
+    so we have CLASS for selecting specific ones  <style> .CLASS <style> -->
+    <style>
+         .baz {color:blue}
+    </style>
+
+    <!-- <link rel = "stylesheet" href = "styles.css"> -->
+</head>
+<body >
+    <h1 class = "baz"> Welcome Bithces</h1> 
+    <h1 class = "baz" >Next Bitch came</h1>
+    Hello</body>
+</html>
+
+
+<!-- What happens if we give style to h1 and also give style to the .CLASS
+
+CSS Specificity
+1.inline (most powerful, does not matter css file attached or not)
+2.ID (higher power)
+3.class (higher power)
+4.type (h1, ol, ul or anythin less powerful) -->
+
+
+<!-- CSS Selectors
+a, b multiple element select
+a b descendant Selectors
+a > b child Selectors
+a + b adjacent sibling Selectors
+[a=b] attribute selector 
+a:b pseudoclass selector 
+a::b pseudoelement selector  -->
