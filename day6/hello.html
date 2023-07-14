@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+    <!-- <script> 
+        // creation of funciton, which will give alert message as the result of that action
+        function hello(){
+            alert('Hello, world!')
+        }
+
+    // alert('Hello, world!'); 
+    // shows alert message, pop up
+
+
+        
+        //lets see it on the webpage not on alert message
+
+        // let counter = 0
+        // function hello() {
+        //     if(document.querySelector('h1').innerHTML === "Hello")
+        //         {document.querySelector('h1').innerHTML = "Goodbye";
+        // } else {
+        //     document.querySelector('h1').innerHTML = "Hello"
+        //     }
+        // }
+    
+        function hello() {
+            const heading = document.querySelector('h1');
+            if(heading.innerHTML === "Hello")
+                {heading.innerHTML = "Goodbye";
+        } else {
+            heading.innerHTML = "Hello"
+            }
+        }
+
+
+    </script> -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelector('form').onsubmit = function() {
+                const name = document.querySelector('#name').value; // id of name, so i ll take name -named input
+                // .value - is the overall value of the form that what it gets as input 
+                alert(`Hello , ${name}!`);
+            };
+        })
+    </script>
+</head>
+<body>
+    <h1>Hello</h1>
+
+    <!-- <button onclick = "hello()" > Click Here </button> button for the Js code connection, onclick run hello function -->
+<form>
+    <input autofocus id= "name" placeholder = "Name" type = "text">
+        <!-- autofocus is directly client will be able to write to the box 
+        place holder is the client see before writing input-->
+    <input type = "submit">
+</form>
+
+</body>
+</html>

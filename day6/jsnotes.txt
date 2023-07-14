@@ -1,0 +1,55 @@
+server and db gives output from the website side and we show it with HTMl 
+
+why js?
+JS allows us to build up client side. running file inside the client side
+
+Benefits
+1. Running computationaly fast in client side
+2. Interactive -directly manipulte webpage - DOM
+
+but html shows - nested text, structure
+
+but when we add
+<script> 
+
+</script>
+- it becomes interactive
+
+event driving programming
+- click, scroll, hover or anything
+JS listens to the each interuption
+
+
+variables in the js 
+
+we see all on the alert message, but how we can see on the page
+
+
+=== - is equal both VALUE / TYPE
+== - is equal Value
+
+in order to insert value inside string
+backtick - ` [not ']
+
+alert(`Counter now is ${counter}`)
+
+
+
+in chrome
+right click > inspect > console   #for finding error in JS file
+
+document.addEventListener(event_type[click,hover or anythin], function )
+document.addEventListener('DOMContentLoaded',function() {
+            
+        })
+## when html button is on line 20 and funciton of that button is in line 18, it can not see button, gives error, solution is the Event listener 
+
+
+document.querySelector('tag')
+document.querySelector('#id')
+document.querySelector('.class')
+
+FILE ORDERS WITH EXPLANATIONS
+hello.html 
+counter.html (variables)
+counter.js
