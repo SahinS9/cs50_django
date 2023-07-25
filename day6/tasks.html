@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // by default, submit button is disabled
+            document.querySelector('#submit').disabled = true
+
+            document.querySelector('#task').onkeyup = () => {
+                if (document.querySelector('#task').value.length > 0 ){
+                document.querySelector('#submit').disabled = false
+            } else {
+                document.querySelector('#submit').disabled = true
+            }
+
+            document.querySelector('form').onsubmit = () => {
+                const task = document.querySelector('#task').value;
+                // console.log(task);
+
+                const li = document.createElement('li');
+                li.innerHTML = task;
+
+                // for clearing input bar/field after submitting
+                document.querySelector('#task').value = ''
+
+                // for adding new input to the tasks unordered list
+                document.querySelector('#tasks').append(li)
+                document.querySelector('#submit').disabled = true
+                // stop form from submitting - it means do not return value, everythin will be handled in client side
+                return false
+            }
+        }
+    })
+    </script>
+</head>
+<body>
+    <h1> Tasks </h1>
+    <uL id = 'tasks'>
+
+    </uL>
+
+    <form>
+        <input id = "task" placeholder = "New Task" type = "text">
+        <input id = 'submit' type = "submit">
+    </form>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colors</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',
+        // function() - can be written as below:
+        () =>
+
+        {
+            //     //Change font color to red
+            // document.querySelector('#red').onclick = function() {
+            //     document.querySelector('#hello').style.color = 'red'
+            // }
+
+            //                 //Change font color to red
+            //                 document.querySelector('#blue').onclick = function() {
+            //     document.querySelector('#hello').style.color = 'blue'
+            // }
+
+            //                 //Change font color to red
+            //                 document.querySelector('#green').onclick = function() {
+            //     document.querySelector('#hello').style.color = 'green'
+            // }
+
+
+            //CHANGE COLOR WITH data-color attribute
+            // document.querySelectorAll('button').forEach( 
+            //     // function (button) - can write this as below
+            //     button => 
+            //     {
+            //         button.onclick = function() {
+            //             document.querySelector('#hello').style.color = button.dataset.color
+            //         }
+
+
+            // Because of the now having button after dropdown list we change code to:
+            document.querySelector('select').onchange = function () {
+                document.querySelector('#hello').style.color = this.value;
+            }
+
+                })
+    </script>
+</head>
+<body>
+    <h1 id = "hello"> Hello! </h1>
+    <!-- <button id = 'red'> Red </button>
+    <button id = 'blue'> Blue </button>
+    <button id = 'green'> Green </button> -->
+        <!-- data attributes -->
+    <!-- <button data-color = 'red'> Red </button>
+    <button data-color = 'blue'> Blue </button>
+    <button data-color = 'green'> Green </button> -->
+
+    <!-- drop down list instead seperate buttons -->
+    <select>
+        <option value = "black">Black</option>
+        <option value = "red">Red</option>
+        <option value = "green">Green</option>
+        <option value = "blue">Blue</option>
+    
+    </select>
+
+<script>
+
+    </script>
+</body>
+</html>
