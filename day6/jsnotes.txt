@@ -49,7 +49,47 @@ document.querySelector('tag')
 document.querySelector('#id')
 document.querySelector('.class')
 
+
+
+colors.html
+Data attributes
+which help us to differentiate the colors with one function rather than 3 different functions for each button
+querySelectorAll - returns array for all buttons
+
+forEach - run function for each element of the array
+
+button.dataset.color
+
+.dataset - is for the accessing to the content of the html 
+
+this.value
+#this special selector for the drop down menue in order to identify which value is selected
+
+
+EVENTS of JS
+onclick
+onmouseover
+onkeydown
+onkeyup
+onload
+onblur
+
+
+
+#in order to make code work in local storage
+
+localStorage.getItem(key)
+localStorage.setItem(key, value)
+
+#js objects
+which we use to get APIs data
+json - java script object notation
+
+
+
 FILE ORDERS WITH EXPLANATIONS
 hello.html 
 counter.html (variables)
 counter.js
+colors.html
+tasks.html  - this time with the JS fully, not SQL
