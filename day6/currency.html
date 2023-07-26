@@ -37,7 +37,10 @@
                 document.querySelector('body').innerHTML = `we are not able to get access key that is why i get ${rate}
                 and this is fake rate ${art_rate.toFixed(3)}`   
             })
-
+            // if API is down, can not work
+            .catch( error => {
+                console.log('Error:', error)
+            })
                 return false  //I dont want to submit to the another page, I m running it locally
             }
 
