@@ -16,7 +16,7 @@
             .then(data => {
                 console.log(data)
 
-                const currency = document.querySelector('#currency').value 
+                const currency = document.querySelector('#currency').value.toUpperCase()
 
                 // if I had access to the API, it would be in this form
                 // var rate = data.rates[currency]
