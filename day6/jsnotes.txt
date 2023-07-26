@@ -86,6 +86,12 @@ which we use to get APIs data
 json - java script object notation
 
 
+fetch
+#web request, get back some httpresponse
+
+after fetch, need to use .then() #in order to consider download time of the API (it s called promise)
+
+we get blank page but we can check result from console of the JS in the browser for the fetch(), then() result
 
 FILE ORDERS WITH EXPLANATIONS
 hello.html 
@@ -93,3 +99,4 @@ counter.html (variables)
 counter.js
 colors.html
 tasks.html  - this time with the JS fully, not SQL
+currency.html - AJAX usage, API connection
