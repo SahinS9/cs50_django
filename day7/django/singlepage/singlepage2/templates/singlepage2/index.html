@@ -8,6 +8,16 @@
 
 <script>
 
+    // for the history of the browser 
+    // when I go back to the history : event from the history
+    window.onpopstate = function(event) {
+        // what state stored
+        console.log(event.state.section);
+        // showing section for the backward operation
+        showSection(event.state.section)
+    } 
+
+
     function showSection(section) {
 
         // if you ll put "/" front of the link it will start from beginning,
@@ -25,7 +35,12 @@
 
         document.querySelectorAll('button').forEach( button => {
             button.onclick = function() {
-                showSection(this.dataset.section)
+
+                // in order to store history for the back button in the browser
+                const section = this.dataset.section
+                //add new element to browsing: 1.section number to take, 2.title number most browsers ignore, 3.url for the back button 
+                history.pushState({section: section}, "",`section${section}` );
+                showSection(section)
             }
         })
 
