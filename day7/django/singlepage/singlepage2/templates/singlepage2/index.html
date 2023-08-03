@@ -3,9 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Single Page 2</title>
 </head>
+
+<script>
+
+    function showSection(section) {
+
+        // if you ll put "/" front of the link it will start from beginning,
+        // if you ll not put it [/], it ll start where it has left, so it ll start from ip/sp2/{}
+        fetch(`section/${section}`)
+        .then (response => response.text())
+        .then (text => {
+            console.log(text);
+            document.querySelector('#content').innerHTML = text
+        })
+
+    } 
+
+    document.addEventListener('DOMContentLoaded', function(){
+
+        document.querySelectorAll('button').forEach( button => {
+            button.onclick = function() {
+                showSection(this.dataset.section)
+            }
+        })
+
+    })
+
+</script>
+
+
+
 <body>
     
+ <h1> Sections to Read </h1>
+<button data-section = '1'>Section 1</button>
+<button data-section = '2'>Section 2</button>
+<button data-section = '3'>Section 3</button>
+
+<div id = "content"></div>
 </body>
 </html>

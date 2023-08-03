@@ -8,9 +8,9 @@ def index(request):
 
 
 texts = [
-    'Text 1 for the first Page',
-    'Text 2 shows page 2 is here',
-    'Text 3 identifies 3 page with example'
+    'NOT Text 1 for the first Page',
+    'NOT Text 2 shows page 2 is here',
+    'NOT Text 3 identifies 3 page with example'
 ]
 
 
