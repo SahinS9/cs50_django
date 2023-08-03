@@ -1,1 +1,9 @@
 #started
+
+single page for the web and understanding of it
+
+fetch function
+
+/section/2 - go back to beginning and concat with main ip
+section/2 - fetch it with the current ip, continuation of the link
+
