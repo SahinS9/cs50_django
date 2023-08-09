@@ -2,8 +2,40 @@
 
 single page for the web and understanding of it
 
+
+##singlepage django folder
 fetch function
 
 /section/2 - go back to beginning and concat with main ip
 section/2 - fetch it with the current ip, continuation of the link
 
+history creation
+history.pushState(id, history number, link)
+# but reload does not work, so need to understand what you can do
+
+
+##scroll.html
+#WINDOW 
+window - how much client sees current time 
+document.query - for all document (visible & non visible)
+
+window.innerHeight
+window.innerWidth 
+
+
+window.scrollY
+how many pixels far down scrolled
+
+document.body.offsetHeight - how tall the document is
+
+window.scrollY + window.innerHeight = document.body.offsetHeight (when you reach bottom of the page)
+
+so infinite scroll for the social media ( usage of height formula) need to use
+
+
+
+#files
+single_page.html
+singlepage django folder
+scroll.html
+scroll django folder
