@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INDEX</title>
+</head>
+
+    
+
+    <style>
+
+/* one posts is hided and another jumps to its place  */
+        /* @keyframes hide {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            } */
+
+
+            @keyframes hide {
+            0% {
+                opacity: 1;
+            }
+            75% {
+                opacity: 0;
+            }
+            100% {
+                opacity:0;
+                height: 0;
+                line-height: 0px;
+                font-size : 0px;
+                padding:0px;
+                margin-bottom: 0px;
+
+
+            }
+
+
+            
+        }
+
+        .hide {
+            float: right
+        }
+
+    .post {
+        background-color: #6911dd;
+        padding: 20px;
+        margin: 10px;
+        animation-name: hide;
+        animation-duration: 2s;
+        animation-fill-mode: forwards;
+        animation-play-state: paused;
+    }
+
+    body {
+        padding-bottom: 50px;
+    }
+    </style>
+
+
+    <script>
+        let counter = 1
+
+        const quantity = 20
+
+        // WHEN DOM LOADS,  render the first 20 posts
+        document.addEventListener('DOMContentLoaded', load)
+
+        window.onscroll = () =>{
+            if ( (window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+                load()
+            }
+        }
+
+        // anything clicked on the page, need to check what is clicked\
+        // event - is the JS object that keeps actions happened in the page [scroll, click, hover and etc.]
+        document.addEventListener('click', event => {
+            const element = event.target;
+            if (element.className === 'hide'){
+                // it just removes child element as Hide button
+                // element.remove();
+
+                // element.parentElement.remove()
+
+                element.parentElement.style.animationPlayState = 'running';
+                element.parentElement.addEventListener('animationend', () => {
+                    element.parentElement.remove()
+                }
+            )}
+        })
+
+        function load () {
+        
+            const start = counter
+            const end = start+quantity-1
+
+            counter = end+1
+
+            fetch(`/posts?start=${start}&end=${end}`)
+            .then(response => response.json())
+            .then(data => {data.posts.forEach(add_post);
+            })
+        }
+
+        function add_post(contents) {
+
+            //create new post
+            const post = document.createElement('div')
+            post.className = 'post'
+            post.innerHTML = `${contents} <button class = "hide">HIDE</button>`
+
+            // ad post to DOM
+            document.querySelector('#posts').append(post)
+            console.log("20 posts added")
+        }
+    </script>
+
+
+<body>
+    <div id="posts"></div>
+</body>
+</html>
