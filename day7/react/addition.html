@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+   
+    <style>
+
+        #app{
+            text-align: center;
+            font-family: sans-serif;
+
+        }
+
+        #problem {
+            font-size: 72px;
+            /* color: blueviolet; */
+        }
+
+        .incorrect {
+            color: red;
+        }
+
+        #winner {
+            font-size: 90;
+            background-color: green;
+            font-family: Lucida Sans;
+            color: white;
+        }
+    </style>
+
+    <title>Counter</title>
+</head>
+<body>
+    
+    <div id = "app"></div>
+
+    <script type = 'text/babel'>
+
+        // function Hello () {
+        //     return (
+        //         <h1>Hello!</h1>
+        //     )
+        // }
+
+
+
+        function App() {
+
+            // instead of this num1, num2
+            // const [num1, setNum1] = React.useState(1);
+            // const [num2, setNum2] = React.useState(2);
+
+
+            // we can use library logic for the states in this way
+            const [state, setState] = React.useState({
+                num1: 2,
+                num2: 3,
+                response: "" ,
+                score: 0,
+
+                // in order to track answer is right / wrong
+                incorrect: false
+            })
+
+
+            function inputKeyPress(event){
+
+                const answer = parseInt(state.response)
+
+                if (event.key === 'Enter'){
+                    
+                    if (state.num1 + state.num2 === answer){
+                    //right answer
+
+                    setState({
+                        ...state,
+
+                        // in order to get new numbers to calculate after each submission
+                        num1: Math.ceil(Math.random()*10),
+                        num2: Math.ceil(Math.random()*10),
+
+                        // in order to get score for the right answer
+                        score: state.score +1,
+
+                        // in order to get clean input field after each submit
+                        response: "",
+                        incorrect: false
+                    })}
+                else {
+                    //wrong answer
+                    setState({
+                    ...state,
+                    score: state.score-1,
+                    incorrect: true})
+                }
+            }
+        }
+            function updateResponse(event){
+                setState ({
+                    // num1: state.num1,
+                    // num2: state.num2,
+
+                    // it means all are values will stay as same as before, and which one you want to change, assign new value (as response)
+                    ...state,
+                    response: event.target.value
+                })
+            }
+
+            if (state.score === 1){
+                return ( 
+                    <div id = 'winner'>
+                        You WON! the Game
+                        <div>Your score is {state.score} </div>
+                        </div>
+                )
+
+            }
+            return (
+
+            <div> 
+                <div 
+                // state.incorrect is True name classname should be incorrect, otherwise empty string
+                className= {state.incorrect ? "incorrect": ""} 
+                id = 'problem'> {state.num1} + {state.num2} </div>
+                <input 
+
+                // in order to have selected input field and be able to write without clicking it on each page load
+                autoFocus = {true}
+
+                // in order to get submitted result
+                onKeyPress={inputKeyPress}
+
+                // this is related with setState of response
+                onChange = {updateResponse} 
+                
+                value = {state.response}/>
+                
+                <div> Score: {state.score}</div>
+                </div>
+
+            )
+            
+        }
+
+        ReactDOM.render( <App />, document.querySelector('#app'))
+    </script>
+</body>
+</html>
